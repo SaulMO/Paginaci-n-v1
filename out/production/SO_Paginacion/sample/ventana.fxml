@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.121"
+            xmlns:fx="http://javafx.com/fxml/1"
+            stylesheets="@recursos/estilo.css"
+            fx:controller="sample.ControladorSimulacion">
+
+    <top>
+        <VBox spacing="40" alignment="CENTER" BorderPane.alignment="CENTER">
+            <Label alignment="CENTER" text="PAGINACIÓN" textAlignment="CENTER" BorderPane.alignment="CENTER"/>
+        </VBox>
+    </top>
+
+    <left>
+        <GridPane alignment="TOP_CENTER" hgap="15" vgap="8" BorderPane.alignment="TOP_CENTER">
+            <Label alignment="CENTER" text="Memoria" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="0" />
+            <Label alignment="CENTER_LEFT" text="# Páginas: " textAlignment="LEFT" GridPane.columnIndex="0" GridPane.halignment="LEFT" GridPane.rowIndex="2" />
+            <ComboBox fx:id="cbPag" prefWidth="60.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label alignment="CENTER_LEFT" text="# Marcos: " textAlignment="LEFT" GridPane.columnIndex="0" GridPane.halignment="LEFT" GridPane.rowIndex="3" />
+            <ComboBox fx:id="cbMarco" prefWidth="60.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label alignment="CENTER_LEFT" text="Tamaño Memoria: " textAlignment="LEFT" GridPane.columnIndex="0" GridPane.halignment="LEFT" GridPane.rowIndex="4" />
+            <TextField fx:id="txtMemoria" prefWidth="60.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <HBox GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" spacing="10">
+                <Button fx:id="btnMemoria" alignment="CENTER" text="Hacer Memoria" textAlignment="CENTER"/>
+                <Button fx:id="btnTerminar" alignment="CENTER" text="Terminar" textAlignment="CENTER"/>
+            </HBox>
+
+            <Label alignment="CENTER" text="Trabajo De Procesos" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="10" />
+            <Button fx:id="btnGenerar" alignment="CENTER" text="GenerarProceso" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="12" />
+            <Button fx:id="btnSacar" alignment="CENTER" text="SacarProceso" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.halignment="LEFT" GridPane.rowIndex="13" />
+            <ComboBox fx:id="cbSacar" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+        </GridPane>
+    </left>
+
+    <center>
+        <VBox alignment="TOP_CENTER" spacing="15" BorderPane.alignment="TOP_CENTER">
+            <HBox alignment="TOP_CENTER" spacing="20">
+                <Label fx:id="lblTamano" text="Tamaño Memoria :" />
+                <Label fx:id="lblPag" text="# Paginas :" />
+                <Label fx:id="lblMarco" text="Tamano Marcos:" />
+            </HBox>
+            <ScrollPane maxWidth="250" minWidth="250" prefWidth="250" maxHeight="500" minHeight="500" prefHeight="500">
+                <GridPane fx:id="gridPaneTabla" alignment="CENTER">
+                    <Label alignment="CENTER" prefWidth="80" text="Proceso" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0" />
+                    <Label alignment="CENTER" prefWidth="80" text="Uso" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" />
+                    <Label alignment="CENTER" prefWidth="80" text="Libre" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="0" />
+                </GridPane>
+            </ScrollPane>
+        </VBox>
+    </center>
+
+    <right>
+        <GridPane alignment="TOP_CENTER" hgap="15" vgap="8" BorderPane.alignment="TOP_CENTER">
+            <Label alignment="CENTER" text="Swapping" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0" />
+            <TextArea fx:id="txtSwapping" prefWidth="100" maxWidth="100" minWidth="100" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+            <Label alignment="CENTER" text="Finalizados" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" />
+            <TextArea fx:id="txtSalida" maxWidth="60" minWidth="10" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+
+            <Label fx:id="lblProceso" alignment="CENTER_LEFT" text="Swapping" textAlignment="LEFT" GridPane.columnSpan="2" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+        </GridPane>
+    </right>
+</BorderPane>
